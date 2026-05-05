@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Analytics Copilot</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+Analytics Copilot
+</div>
+
+
+<div class="onboard">
+
+<h4>Get Started</h4>
+
+<p>1. Upload your database</p>
+<p>2. Ask a question in English</p>
+<p>3. View SQL, insights & charts</p>
+
+</div>
+
+
+<div class="nav-section">
+
+<div class="nav-title">
+DATABASE
+</div>
+
+<button class="nav-btn active"
+onclick="connectSQLite()">
+Upload SQLite
+</button>
+
+<button class="nav-btn">
+Connect MySQL
+</button>
+
+<button class="nav-btn">
+Connect PostgreSQL
+</button>
+
+</div>
+
+</aside>
+
+
+
+<!-- Workspace -->
+
+<main class="workspace">
+
+
+<!-- Hero -->
+
+<section class="hero">
+
+<h1>
+Ask questions about your data in plain English
+</h1>
+
+<p>
+Analytics Copilot converts natural language into SQL queries,
+explains results, and generates visual insights instantly.
+</p>
+
+
+<div class="examples">
+
+<button onclick="fillExample(this)">
+Top customers by revenue
+</button>
+
+<button onclick="fillExample(this)">
+Monthly sales trend
+</button>
+
+<button onclick="fillExample(this)">
+Revenue by region
+</button>
+
+<button onclick="fillExample(this)">
+Orders per category
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- Query Bar -->
+
+<header class="header">
+
+<input
+id="question"
+placeholder="Example: Show top 5 customers by revenue"
+/>
+
+<button onclick="askQuestion()">
+Run Query
+</button>
+
+<span id="status"></span>
+
+</header>
+
+
+
+<!-- Dashboard -->
+
+<section class="dashboard">
+
+
+<div class="panel insight">
+
+<h3>Insight</h3>
+
+<div id="explanation">
+Your explanation will appear here after running a query.
+</div>
+
+</div>
+
+
+<div class="panel sql">
+
+<h3>Generated SQL</h3>
+
+<pre id="sql">
+SQL query will appear here.
+</pre>
+
+</div>
+
+
+<div class="panel visualization">
+
+<h3>Visualization</h3>
+
+<div id="chart">
+
+<p class="empty-chart">
+Charts will appear here after executing your query.
+</p>
+
+</div>
+
+</div>
+
+
+</section>
+
+</main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
